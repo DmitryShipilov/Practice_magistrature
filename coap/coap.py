@@ -27,27 +27,34 @@ async def CoAP_request(code, uri, payload=None):
 		print ("Result code:", response.code,"\n",
 		"Payload:", response.payload)
  
-
+"""
 if __name__ == "__main__":
+
 	asyncio.get_event_loop().run_until_complete(CoAP_request(
 	code=Code.GET,
 	uri='coap://localhost/other/block'
 	))
+"""
 
 print("\nPUT")
 
-size = 10
+size = 1
 asyncio.get_event_loop().run_until_complete(CoAP_request(
 code=Code.PUT,
 uri='coap://localhost/other/block',
-payload = b"yyy yyy yyy\n" * size
+payload = b"bytes_is10" * size
 ))
+
+"""
 print("\nGET")
  
 asyncio.get_event_loop().run_until_complete(CoAP_request(
 code=Code.GET,
-uri='coap://localhost/other/block',
+uri='coap://127.0.0.1/other/block',
 ))
+"""
+
+"""
 print("\nPUT")
  
 asyncio.get_event_loop().run_until_complete(CoAP_request(
@@ -62,3 +69,4 @@ code=Code.GET,
 uri='coap://localhost/time',
 ))
 print("\n")
+"""
